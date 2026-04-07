@@ -1,43 +1,74 @@
-Sampling Assignment
-Objective
 
-This assignment aims to explore the role of sampling techniques in managing imbalanced datasets and to evaluate how different sampling methods influence the performance of machine learning models.
+# Sampling Assignment
 
-Methodology
-Data Loading: The dataset was imported into Google Colab using the pandas library.
-Imbalance Analysis: Class distribution was examined using value counts, revealing a significant imbalance between classes.
-Data Balancing: Random oversampling was applied to address the imbalance by duplicating minority class samples, resulting in an equal number of instances for each class.
-Sampling Process: After balancing the dataset, five different sampling techniques were implemented.
-Model Training: For each sampled dataset, five machine learning models were trained and their accuracies were recorded.
-Sampling Techniques Applied
-Simple Random Sampling: Selects data points randomly without considering any structure.
-Stratified Sampling: Ensures that class proportions remain consistent within the sample.
-Cluster Sampling: Groups data based on the Time attribute and samples from these clusters.
-Bootstrap Sampling: Generates new datasets by sampling with replacement.
-Systematic Sampling: Picks samples at regular intervals (every k-th record).
-Machine Learning Models Used
-Logistic Regression
-Decision Tree
-Random Forest
-Support Vector Machine (SVM)
-K-Nearest Neighbors (KNN)
-Results
+---
 
-The performance of machine learning models varied significantly depending on the sampling technique used. Tree-based models such as Decision Tree and Random Forest achieved extremely high accuracy with Simple Random, Cluster, and Bootstrap sampling, likely due to overfitting caused by duplicated data.
+## Objective
 
-Stratified Sampling provided more stable and balanced results across all models. In contrast, Systematic Sampling yielded comparatively lower but more realistic accuracy values. Overall, the choice of sampling method had a substantial impact on model performance.
+The objective of this assignment is to understand the importance of sampling techniques in handling an imbalanced dataset and to analyze how different sampling strategies affect the performance of various machine learning models.
 
-Sampling Techniques	LogReg	DecisionTree	RandomForest	SVM	KNN
-Simple Random	90.16	98.36	100.00	70.49	95.08
-Stratified	88.31	97.40	97.40	72.73	89.61
-Cluster	95.65	100.00	100.00	91.30	95.65
-Bootstrap	91.50	100.00	99.67	67.32	97.71
-Systematic	80.95	90.48	85.71	66.67	80.95
-Visualization
-A bar chart was used to compare model accuracy across different sampling techniques.
-A heatmap was created to visualize performance variations and identify patterns across models and sampling methods.
-Conclusion
+---
 
-The dataset initially exhibited class imbalance, which was effectively addressed using random oversampling. The experimental findings indicate that no single sampling method performs best across all models. Although Cluster and Bootstrap sampling produced higher accuracy scores, these results may reflect overfitting.
+## Methodology
 
-Stratified Sampling, on the other hand, delivered more consistent and reliable performance. Therefore, selecting an appropriate sampling technique is crucial for building robust and generalizable machine learning models.
+- Data Loading: The dataset is loaded into Google Colab using pandas.
+- Imbalance Analysis: Class distribution is analyzed using value counts, which confirms that the dataset is highly imbalanced.
+- Data Balancing: To handle class imbalance, **random oversampling** is used i.e. Minority class samples are duplicated and the final dataset contains equal samples of both classes.
+- Sampling: After balancing the dataset, 5 different types of sampling is aaplied on it.
+- Train Models: For each type of sampled data, 5 different models were trained and accuracy was calculated.
+
+---
+
+## Sampling Techniques Used
+
+- **Simple Random Sampling** : Randomly selects a subset of data without bias.
+- **Stratified Sampling** : Maintains class proportion in the sample.
+- **Cluster Sampling** : Uses the `Time` attribute as a cluster identifier.
+- **Bootstrap Sampling** : Sampling with replacement to create a resampled dataset.
+- **Systematic Sampling** : Selects every k-th record from the dataset.
+  
+---
+
+## ML Models Used
+
+- Logistic Regression  
+- Decision Tree  
+- Random Forest  
+- Support Vector Machine (SVM)  
+- K-Nearest Neighbors (KNN)
+
+---
+
+## Results
+Different sampling techniques produced different accuracy results for machine learning models. Tree-based models such as Decision Tree and Random Forest showed very high accuracy for Simple Random, Cluster, and Bootstrap sampling due to data duplication, indicating possible overfitting. Stratified Sampling provided more balanced and stable performance across all models. Systematic Sampling resulted in lower but more realistic accuracy values. Overall, sampling technique plays a crucial role in model performance.
+
+| Sampling Techniques | LogReg | DecisionTree | RandomForest | SVM   | KNN   |
+|---------------------|--------|--------------|--------------|-------|-------|
+| Simple Random       | 90.16  | 98.36        | 100.00       | 70.49 | 95.08 |
+| Stratified          | 88.31  | 97.40        | 97.40        | 72.73 | 89.61 |
+| Cluster             | 95.65  | 100.00       | 100.00       | 91.30 | 95.65 |
+| Bootstrap           | 91.50  | 100.00       | 99.67        | 67.32 | 97.71 |
+| Systematic          | 80.95  | 90.48        | 85.71        | 66.67 | 80.95 |
+
+
+---
+
+## Result Graphs
+
+ **Bar Graph** to compare model accuracy across sampling techniques
+
+<img width="726" height="531" alt="image" src="https://github.com/user-attachments/assets/964f3e4a-d6de-4ed9-b5af-2c0780b58759" />
+
+
+
+
+
+ **Heatmap** to highlight performance variation
+
+<img width="718" height="597" alt="image" src="https://github.com/user-attachments/assets/af34cbfd-f81b-4ccc-962f-3ee6bd166b31" />
+
+
+---
+
+## Conclusion
+The dataset was initially imbalanced and was successfully balanced using oversampling. Experimental results show that no single sampling technique is best for all models. While Cluster and Bootstrap sampling gave higher accuracy, Stratified Sampling produced more reliable and consistent results. Hence, proper sampling selection is essential for building accurate models.    chnage its wording as i want to paste it somewhere else
